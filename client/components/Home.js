@@ -1,4 +1,5 @@
 import React from 'react';
+import Demo from './Demo.js';
 import Signup from './Signup.js';
 import Login from './Login.js';
 
@@ -28,6 +29,7 @@ class Home extends React.Component {
 
     return (
       <div>
+        <Demo />
         {viewBox}
       </div>
     )
