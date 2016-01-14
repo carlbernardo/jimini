@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 class Wishlist extends React.Component {
   constructor(){
-    super()
+    super();
     this.removeWish = this.removeWish.bind(this);
     this.state = {
       wishlist: []
