@@ -10,7 +10,6 @@ class ItemForm extends React.Component {
     this.getCategoryRef = this.getCategoryRef.bind(this);
     this.getMessageRef = this.getMessageRef.bind(this);
     this.getUrlRef = this.getUrlRef.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.state = {
       itemname: '',
       category: '',
@@ -70,40 +69,22 @@ class ItemForm extends React.Component {
     this.messageRef.value = '';
   }
 
-  handleChange(e){
-    console.log(e.target.name);
-    console.log(e.target.value);
-    console.log(e.target.value.length);
-
-    let urlChecker = e.target.name === 'url'
-      && e.target.value[0] === 'h'
-      && e.target.value[1] === 't'
-      && e.target.value[2] === 't'
-      && e.target.value[3] === 'p'
-      && e.target.value[4] === 's'
-      && e.target.value[5] === ':'
-      && e.target.value[6] === '/'
-      && e.target.value[7] === '/'
-
-    console.log(urlChecker);
-  }
-
   render(){
     return (
       <form ref='form'>
           <label>Item</label>
-          <input type='text' name='itemname' className='form-control' placeholder='Item Name' ref={this.getItemnameRef} onChange={this.handleChange} />
+          <input type='text' name='itemname' className='form-control' placeholder='Item Name' ref={this.getItemnameRef} />
         <div className='form-group'>
           <label>Category</label>
-          <input type='text' name='category' className='form-control' placeholder='Category' ref={this.getCategoryRef} onChange={this.handleChange} />
+          <input type='text' name='category' className='form-control' placeholder='Category' ref={this.getCategoryRef} />
         </div>
         <div className='form-group'>
           <label>Message</label>
-          <input type='text' name='message' className='form-control' placeholder='Message' ref={this.getMessageRef} onChange={this.handleChange} />
+          <input type='text' name='message' className='form-control' placeholder='Message' ref={this.getMessageRef} />
         </div>
         <div className='form-group'>
           <label>Link</label>
-          <input type='url' name='url' className='form-control' placeholder='Enter URL Here' ref={this.getUrlRef} onChange={this.handleChange} />
+          <input type='url' name='url' className='form-control' placeholder='Enter URL Here' ref={this.getUrlRef} />
         </div>
         <button type='submit' className='btn btn-primary' onClick={this.handleSubmit}>Submit</button>
       </form>
